@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+        <style>
+            .content{
+                /* border: 2px solid black; */
+                width: fit-content;
+                padding: 30px;
+                background: inherit;
+                border-radius: 15px;
+                border: 1px solid rgba(43, 43, 43, 0.568);
+                position: absolute;
+                overflow: hidden;
+                transform: translate(100px , -50%);
+            }
+            .content::before{
+                position: absolute;
+                content: '';
+                background: inherit;
+                left: -25px;
+                right: 0;
+                top: -25px;
+                bottom: 0;
+                box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+                filter: blur(10px);
+                border-radius: 15px;
+            }
+            body{
+                background-image: url(./assets/f\ to\ c.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* background-color: yellow; */
+            }
+            #title{
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 50px;
+                color: red;
+                text-shadow: 2px 2px 2px blue;
+            }
+            #fahrenheit{
+                width: 80%;
+            }
+            #output{
+                color: red;
+                text-shadow: 2px 2px 2px blue;
+                font-size: 30px;
+            }
+        </style>
+        <script>
+            function calculate(){
+                f=parseInt(document.getElementById("fahrenheit").value)
+                c=(f-32)*5/9
+                document.getElementById("celsius").value=c
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <form>
+                <p id="title" class="text-center">FAHRENHEIT TO CELSIUS CONVERTER</p>
+                <div class="text-center">
+                <input id="fahrenheit" placeholder="Enter the fahrenheit value">
+                </div><br><br>
+                <div class="text-center">
+                <button onclick="calculate()">Calculate</button>
+                </div><br>
+                <div class="text-center">
+                <p id="output">Celcius = <input id="celsius"></p>
+                </div>
+                </form>
+            </div>
+        </div>       
+    </body>
+</html>

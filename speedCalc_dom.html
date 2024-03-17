@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+        <style>
+            #content{
+                display: grid;
+                border: 5px solid chartreuse;
+                width:fit-content;
+                padding: 20px;
+                background-color: aquamarine;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 10%;
+            }
+            #top{
+                background-color: chartreuse;
+            }
+            #button{
+                background-color: chartreuse;
+                justify-content: center;
+            }
+            /* input{
+                float: left;
+                
+            }
+            p{
+                float: left;
+                clear: left;
+                text-align: left;
+            } */
+        </style>
+        <script>
+            function calculate(){
+                d=parseInt(document.getElementById("distance").value)
+                t=parseInt(document.getElementById("time").value)
+                s=d/t
+                document.getElementById("speed").value=s
+            }
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <div id="top" class="text-center"><h1>SPEED CALCULATOR</h1>
+            <p>Enter the Distance and Time to calculate the Speed</p></div>
+            <div><h3>DISTANCE : <input id="distance"></h3>
+            <h3>TIME : <input id="time"></h3>
+            <div class="text-center">
+                <button id="button" onclick="calculate()">Calculate</button>
+            </div>
+            <h3>SPEED = <input id="speed"></h3></div>
+        </div>
+    </body>
+</html>
